@@ -5,11 +5,9 @@ import '../Styles/Pages/login.css';
 /* Login page */
 function Login () {
     return (
-           <main className='main bg-dark'>
-                <section className='sign-in-content'>
-                    <Input />
-                </section>
-            </main>
+        <main className='main bg-dark'>
+            <Input />
+        </main>
     
         
     )

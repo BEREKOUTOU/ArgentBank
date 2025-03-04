@@ -11,7 +11,7 @@ const Header = () => {
                         <img src={Logo} alt="Bank Logo" />
                     </li>
                     <li>
-                        <Link to="/about"><i className="fa-solid fa-circle-user"></i>Sign In</Link>
+                        <Link to="/login"><i className="fa-solid fa-circle-user"></i>Sign In</Link>
                     </li>
                 </ul>
             </nav>
