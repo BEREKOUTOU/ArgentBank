@@ -1,0 +1,11 @@
+.home-content {
+  width: 100%;
+  height: auto;
+}
+
+.features {
+  display: flex;
+  flex-direction: row; /* Ensure items are arranged in a row */
+  justify-content: space-around; /* Space items evenly */
+  flex-wrap: wrap; /* Allow items to wrap if necessary */
+}
