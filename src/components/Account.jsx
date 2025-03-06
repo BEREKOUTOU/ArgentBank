@@ -1,5 +1,5 @@
 import React from 'react'
-import '../sass/components/_Account.scss';
+import '../styles/Components/Account.css';
 
 /* Component function that returns a user's account */
 function Account ({ title, amount, description }) {

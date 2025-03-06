@@ -8,8 +8,6 @@ function Login () {
         <main className='main bg-dark'>
             <Input />
         </main>
-    
-        
     )
 }
 

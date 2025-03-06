@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Logo from '../assets/Images/argentBankLogo.webp'
 import { useSelector } from 'react-redux';
+import '../styles/Components/Header.css';
+
 
 /**
  * Header component that renders the website's main navigation bar.
@@ -23,23 +25,19 @@ const Header = () => {
     return (
         <header>
             <nav>
-                <ul style={{ listStyle: 'none', display: 'flex', gap: '20px' }}>
-                    <li>
-                        <img src={Logo} alt="Bank Logo" />
-                    </li>
-                    <li>
+                <Link to="/"><img src={Logo} alt="Bank Logo" /></Link>
                     {isConnected ? (
-                        <li>
+                       <div>
                             <Link to="/profile"><i className="fa-solid fa-circle-user"></i>{firstName}</Link>
                             <Link to="/"  onClick={logoutHandler}><i className='fa-solid fa-arrow-right-from-bracket' />Sign Out</Link>
-                        </li> 
+                        </div>
                     ) : (
-                        <li>
-                            <Link to="/login"><i className="fa-solid fa-circle-user"></i>Sign In</Link>
-                        </li>
+                      
+                      <Link to="/login"><i className="fa-solid fa-circle-user"></i>Sign In</Link>
+                      
                     )}
-                    </li>
-                </ul>
+                    
+              
             </nav>
         </header>
     )
