@@ -26,11 +26,14 @@ nav ul li{
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding: 10px;
 }
 nav ul li a{
   justify-content: flex-end;
   text-decoration: none;
   color: black;
+  font-size: 15px;
+  font-weight: bold;
 }
 .fa-solid{
   color: black;
