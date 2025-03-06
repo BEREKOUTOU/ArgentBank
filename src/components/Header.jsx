@@ -17,11 +17,18 @@ const Header = () => {
 
     const logoutHandler = () => {
         // Add your logout logic here
+            localStorage.removeItem('token');
+            localStorage.removeItem('firstName');
+            localStorage.removeItem('lastName');
+            localStorage.removeItem('email');
+            localStorage.removeItem('userId');
+ 
         console.log('User logged out');
     };
     const isConnected = useSelector((state) => state.auth.token);
     const firstName = useSelector((state) => state.auth.firstName);
-
+     
+    
     return (
         <header>
             <nav>

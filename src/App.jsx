@@ -20,10 +20,9 @@ export default function App() {
       <Router>
         <Header />
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={isConnected ? <Profile /> : <Navigate to="/login" />} />  
-            
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={isConnected ? <Profile /> : <Navigate to="/login" />} />  
         </Routes>
         <Footer />
       </Router>
