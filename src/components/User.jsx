@@ -59,7 +59,8 @@ function User () {
                 <div>
                     <h2>Welcome back 
                         <br />
-                        {userData.firstname} {userData.lastname} !
+                        {userData.firstname} {userData.lastname} 
+                        Tony Jarvis!
                     </h2>
                     <button className="edit-button" onClick={() => setDisplay(!display)}>Edit Name</button>
                 </div>
