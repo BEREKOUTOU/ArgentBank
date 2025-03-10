@@ -36,7 +36,7 @@ const Header = () => {
                     {isConnected ? (
                        <div>
                             <Link to="/profile"><i className="fa-solid fa-circle-user"></i>{firstName}Tony</Link>
-                            <Link to="/"  onClick={logoutHandler}><i className='fa-solid fa-arrow-right-from-bracket' />Sign Out</Link>
+                            <Link to="/"  onClick={logoutHandler}><i className='fa fa-sign-out' />Sign Out</Link>
                         </div>
                     ) : (
                       
