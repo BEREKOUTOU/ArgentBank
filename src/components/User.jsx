@@ -95,7 +95,7 @@ function User () {
                                 disabled={true}
                             />
                         </div>
-                        <div className="buttons">
+                        <div className="button-container">
                             <button className="edit-username-button" onClick={handleSubmitUsername}>Save</button>
                             <button className="edit-username-button" onClick={() => setDisplay(!display)}>Cancel</button>
                         </div>

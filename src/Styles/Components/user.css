@@ -16,3 +16,41 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+.edit-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.edit-input input {
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+ label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.edit-username-button {
+    background-color: #00bc77;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;    
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
