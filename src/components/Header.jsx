@@ -35,7 +35,7 @@ const Header = () => {
                 <Link to="/"><img src={Logo} alt="Bank Logo" /></Link>
                     {isConnected ? (
                        <div>
-                            <Link to="/profile"><i className="fa-solid fa-circle-user"></i>{firstName}</Link>
+                            <Link to="/profile"><i className="fa-solid fa-circle-user"></i>{firstName}Tony</Link>
                             <Link to="/"  onClick={logoutHandler}><i className='fa-solid fa-arrow-right-from-bracket' />Sign Out</Link>
                         </div>
                     ) : (
