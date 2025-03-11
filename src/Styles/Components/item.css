@@ -29,3 +29,10 @@
     font-size: 1.25rem;
     font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+    .feature-item {
+        width: 100%;
+    }
+    
+}
