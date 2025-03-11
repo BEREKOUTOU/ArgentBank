@@ -34,16 +34,16 @@ const Header = () => {
         <header>
             <nav>
                 <Link to="/"><img src={Logo} alt="Bank Logo" /></Link>
-                    {isConnected ? (
-                       <div>
-                            <Link to="/profile"><i className="fa-solid fa-circle-user"></i>{firstName}Tony</Link>
-                            <Link to="/"  onClick={logoutHandler}><i className='fa fa-sign-out' />Sign Out</Link>
-                        </div>
-                    ) : (
+                {isConnected ? (
+                    <div>
+                        <Link to="/profile"><i className="fa-solid fa-circle-user"></i>{firstName}Tony</Link>
+                        <Link to="/"  onClick={logoutHandler}><i className='fa fa-sign-out' />Sign Out</Link>
+                    </div>
+                ) : (
                       
-                      <Link to="/login"><i className="fa-solid fa-circle-user"></i>Sign In</Link>
+                    <Link to="/login"><i className="fa-solid fa-circle-user"></i>Sign In</Link>
                       
-                    )}
+                )}
                     
               
             </nav>
