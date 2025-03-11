@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import Logo from '../assets/Images/argentBankLogo.webp'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import '../styles/Components/Header.css';
+import { logout } from '../redux/actions/auth.actions'; // Adjust the path as necessary
 
 
 /**
@@ -14,14 +15,14 @@ import '../styles/Components/Header.css';
  */
 
 const Header = () => {
+    const dispatch = useDispatch();
 
     const logoutHandler = () => {
         // Add your logout logic here
+            dispatch(logout());
             localStorage.removeItem('token');
-            localStorage.removeItem('firstName');
-            localStorage.removeItem('lastName');
-            localStorage.removeItem('email');
-            localStorage.removeItem('userId');
+            window.location.reload();
+            Navigate('/');
  
         console.log('User logged out');
     };
