@@ -43,6 +43,7 @@ function User () {
                     console.log(data) 
                 */
                 dispatch(updateUsername(username));
+                alert("Your name is successfully modified!");
                 setDisplay(!display);
             } else {
                 console.log("Invalid Fields")

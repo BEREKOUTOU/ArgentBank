@@ -46,6 +46,7 @@ function Input () {
                 if (rememberMe) {
                     localStorage.setItem("token", token);
                 }
+                alert("You have logged in successfully!");
                 navigate('/profile');
             } else {
                 const error = "Incorrect email/password"
