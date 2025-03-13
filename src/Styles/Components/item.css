@@ -36,3 +36,10 @@
     }
     
 }
+
+@media screen and (max-width: 810px) {
+    .feature-item {
+        width: 50%;
+    }
+    
+}

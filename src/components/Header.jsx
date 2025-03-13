@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, Navigate } from 'react-router-dom'
 import Logo from '../assets/Images/argentBankLogo.webp'
 import { useDispatch, useSelector } from 'react-redux';
-import '../styles/Components/Header.css';
 import { logout } from '../redux/actions/auth.actions'; // Adjust the path as necessary
+import '../styles/Components/Header.css';
 
 
 /**
