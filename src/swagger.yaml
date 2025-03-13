@@ -1,0 +1,95 @@
+openapi: 3.0.0
+info:
+  title: Transaction API
+  description: API for handling transactions
+  version: 1.0.0
+paths:
+  /transactions:
+    get:
+      summary: Retrieve a list of transactions
+      responses:
+        '200':
+          description: A list of transactions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    date:
+                      type: string
+                      format: date
+                    amount:
+                      type: string
+                    description:
+                      type: string
+    post:
+      summary: Create a new transaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date
+                amount:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Transaction created successfully
+        '400':
+          description: Invalid input
+
+  /transactions/{id}:
+    put:
+      summary: Update an existing transaction
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the transaction to update
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date
+                amount:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '200':
+          description: Transaction updated successfully
+        '404':
+          description: Transaction not found
+        '400':
+          description: Invalid input
+    delete:
+      summary: Delete a transaction
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the transaction to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Transaction deleted successfully
+        '404':
+          description: Transaction not found

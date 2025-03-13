@@ -1,6 +1,6 @@
-const userService = require('../services/userService')
+import userService from '../services/userService.js'
 
-module.exports.createUser = async (req, res) => {
+export const createUser = async (req, res) => {
   let response = {}
 
   try {
@@ -17,7 +17,7 @@ module.exports.createUser = async (req, res) => {
   return res.status(response.status).send(response)
 }
 
-module.exports.loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
   let response = {}
 
   try {
@@ -34,7 +34,7 @@ module.exports.loginUser = async (req, res) => {
   return res.status(response.status).send(response)
 }
 
-module.exports.getUserProfile = async (req, res) => {
+export const getUserProfile = async (req, res) => {
   let response = {}
 
   try {
@@ -51,7 +51,7 @@ module.exports.getUserProfile = async (req, res) => {
   return res.status(response.status).send(response)
 }
 
-module.exports.updateUserProfile = async (req, res) => {
+export const updateUserProfile = async (req, res) => {
   let response = {}
 
   try {
