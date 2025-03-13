@@ -58,3 +58,27 @@
     font-size: 0.8rem;
     margin-top: 0.5rem;
 }
+
+@media screen and (max-width: 600px) {
+    .sign-in-content{
+        width: 100%;
+       margin: 0;
+       
+    }
+    .sign-in-content h1{
+        font-size: 1.2rem;
+    }
+    .sign-in-content i{
+        font-size: 1.5rem;
+    }
+    .sign-in-content input{
+        font-size: 0.8rem;
+    }
+    .sign-in-content button{
+        font-size: 0.8rem;
+    }
+    .sign-in-content .error-message{
+        font-size: 0.7rem;
+    }
+    
+}

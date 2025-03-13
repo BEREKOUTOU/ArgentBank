@@ -12,7 +12,7 @@ function Account ({ title, amount, description, onViewTransactions }) {
                 <p className='account-amount-description'>{description}</p>
             </div>
             <div className='account-content-wrapper cta'>
-<button className='transaction-button' onClick={() => { console.log('View transactions clicked'); onViewTransactions(); }}>View transactions</button>
+            <button className='transaction-button' onClick={() => { console.log('View transactions clicked'); onViewTransactions(); }}>View transactions</button>
 
             </div>
         </section> 
