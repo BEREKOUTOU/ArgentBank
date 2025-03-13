@@ -30,7 +30,8 @@ const Profile = () => {
                         modifyTransaction({
                             date: '2023-10-01',
                             amount: '$100.00',
-                            description: 'Monthly Subscription'
+                            description: 'Monthly Subscription',
+                            hour: '10:00 AM'
                         });
                     }}
                 />
