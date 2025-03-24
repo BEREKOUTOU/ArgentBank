@@ -72,7 +72,7 @@ function User () {
                         <div className="edit-input">
                             <label htmlFor="username">User name:</label>
                             <input
-                                type="text"
+                                type="text" deplaceholder="User name"
                                 id="username"
                                 defaultValue={userData.username}
                                 onChange={(event) => setUserName(event.target.value)}
@@ -81,7 +81,7 @@ function User () {
                         <div className="edit-input">
                             <label htmlFor="firstname">First name:</label>
                             <input
-                                type="text"
+                                type="text" deplaceholder="First name"
                                 id="firstname" 
                                 defaultValue={userData.firstname}
                                 disabled={true}
@@ -90,7 +90,7 @@ function User () {
                         <div className="edit-input">
                             <label htmlFor="lastname">Last name:</label>
                             <input
-                                type="text"
+                                type="text" deplaceholder="Last name"
                                 id="lastname" 
                                 defaultValue={userData.lastname}
                                 disabled={true}
