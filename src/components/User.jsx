@@ -76,6 +76,7 @@ function User () {
                                 id="username"
                                 defaultValue={userData.username}
                                 onChange={(event) => setUserName(event.target.value)}
+                                placeholder="User name"
                             />
                         </div>
                         <div className="edit-input">
@@ -85,6 +86,7 @@ function User () {
                                 id="firstname" 
                                 defaultValue={userData.firstname}
                                 disabled={true}
+                                placeholder="First name"
                             />
                         </div>
                         <div className="edit-input">
@@ -94,6 +96,7 @@ function User () {
                                 id="lastname" 
                                 defaultValue={userData.lastname}
                                 disabled={true}
+                                placeholder="Last name"
                             />
                         </div>
                         <div className="button-container">
