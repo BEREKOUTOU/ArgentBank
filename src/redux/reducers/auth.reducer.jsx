@@ -7,7 +7,9 @@ const initialState = {
     token: null,
     error: null,
 }
-
+// Authentication reducer
+// This reducer handles the authentication state of the application
+// It manages the login status, token, and any errors that may occur during authentication
 export const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOGIN_SUCCESS:

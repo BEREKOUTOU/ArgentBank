@@ -7,11 +7,13 @@ import '../styles/Pages/profile.css';
 
 const Profile = () => {
     const [selectedTransaction, setSelectedTransaction] = useState(null);
-
+  // Function to modify the transaction details
+    // This function will set the selectedTransaction to the new details passed in
     const modifyTransaction = (newDetails) => {
         setSelectedTransaction(newDetails);
     };
-
+    // Function to delete the transaction
+    // This function will set the selectedTransaction to null, effectively "deleting" it from the view
     const deleteTransaction = () => {
         setSelectedTransaction(null);
     };
