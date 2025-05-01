@@ -1,12 +1,14 @@
 import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from "../actions/type.actions";
 
-/* Initial state of authentication */
+const tokenFromStorage = localStorage.getItem("token");
+
 const initialState = {
     status: "VOID",
-    isConnected: false,
-    token: null,
+    isConnected: tokenFromStorage ? true : false,
+    token: tokenFromStorage || null,
     error: null,
 }
+
 // Authentication reducer
 // This reducer handles the authentication state of the application
 // It manages the login status, token, and any errors that may occur during authentication
@@ -30,7 +32,14 @@ export const authReducer = (state = initialState, action) => {
             }
         }  
         case LOGOUT: {
-            return initialState;
+            localStorage.removeItem("token");
+            sessionStorage.removeItem("token");
+            return {
+                status: "VOID",
+                isConnected: false,
+                token: null,
+                error: null,
+            };
         }  
         default:
             return state;

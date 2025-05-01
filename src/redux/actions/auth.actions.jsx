@@ -18,7 +18,10 @@ export const loginFailed = (error) => {
 //* The loginFailed action creator is used to create an action that indicates a failed login attempt.
 //* It takes an error message as an argument and returns an action object with the type LOGIN_FAIL and the error message as the payload.
 export const logout = () => {
+    // Clear tokens from storage on logout
+    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
     return {
         type: LOGOUT,
     }
-} 
+}
