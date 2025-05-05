@@ -76,7 +76,7 @@ function User () {
                                 id="username"
                                 defaultValue={userData.username}
                                 onChange={(event) => setUserName(event.target.value)}
-                                placeholder="User name"
+                                placeholder="Enter user name"
                             />
                         </div>
                         <div className="edit-input">
