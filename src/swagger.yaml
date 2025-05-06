@@ -1,11 +1,23 @@
 openapi: 3.0.0
 info:
-  title: Transaction API
-  description: API for handling transactions
+  title: Argent Bank API
+  description: Comprehensive API for Argent Bank including Transactions and User management
   version: 1.0.0
+servers:
+  - url: http://localhost:3000/api
+    description: Local development server
+
+tags:
+  - name: Transactions
+    description: Operations related to transactions
+  - name: Users
+    description: Operations related to user management and authentication
+
 paths:
   /transactions:
     get:
+      tags:
+        - Transactions
       summary: Retrieve a list of transactions
       responses:
         '200':
@@ -15,33 +27,17 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                    date:
-                      type: string
-                      format: date
-                    amount:
-                      type: string
-                    description:
-                      type: string
+                  $ref: '#/components/schemas/Transaction'
     post:
+      tags:
+        - Transactions
       summary: Create a new transaction
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                date:
-                  type: string
-                  format: date
-                amount:
-                  type: string
-                description:
-                  type: string
+              $ref: '#/components/schemas/TransactionInput'
       responses:
         '201':
           description: Transaction created successfully
@@ -50,6 +46,8 @@ paths:
 
   /transactions/{id}:
     put:
+      tags:
+        - Transactions
       summary: Update an existing transaction
       parameters:
         - name: id
@@ -63,15 +61,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                date:
-                  type: string
-                  format: date
-                amount:
-                  type: string
-                description:
-                  type: string
+              $ref: '#/components/schemas/TransactionInput'
       responses:
         '200':
           description: Transaction updated successfully
@@ -80,6 +70,8 @@ paths:
         '400':
           description: Invalid input
     delete:
+      tags:
+        - Transactions
       summary: Delete a transaction
       parameters:
         - name: id
@@ -93,3 +85,200 @@ paths:
           description: Transaction deleted successfully
         '404':
           description: Transaction not found
+
+  /signup:
+    post:
+      tags:
+        - Users
+      summary: Create a new user account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserSignup'
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '400':
+          description: Invalid input
+
+  /login:
+    post:
+      tags:
+        - Users
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+      responses:
+        '200':
+          description: Login successful, returns auth token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: JWT authentication token
+        '401':
+          description: Invalid credentials
+
+  /profile:
+    get:
+      tags:
+        - Users
+      summary: Get user profile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User profile retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '401':
+          description: Unauthorized
+    put:
+      tags:
+        - Users
+      summary: Update user profile
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserUpdate'
+      responses:
+        '200':
+          description: User profile updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '400':
+          description: Invalid input
+        '401':
+          description: Unauthorized
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the transaction
+        date:
+          type: string
+          format: date
+          description: Date of the transaction
+        amount:
+          type: string
+          description: Amount of the transaction
+        description:
+          type: string
+          description: Description of the transaction
+      required:
+        - id
+        - date
+        - amount
+        - description
+
+    TransactionInput:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        amount:
+          type: string
+        description:
+          type: string
+      required:
+        - date
+        - amount
+        - description
+
+    UserSignup:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+        firstName:
+          type: string
+        lastName:
+          type: string
+        userName:
+          type: string
+      required:
+        - email
+        - password
+        - firstName
+        - lastName
+        - userName
+
+    UserLogin:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+      required:
+        - email
+        - password
+
+    UserUpdate:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        userName:
+          type: string
+
+    UserResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+          format: email
+        firstName:
+          type: string
+        lastName:
+          type: string
+        userName:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
