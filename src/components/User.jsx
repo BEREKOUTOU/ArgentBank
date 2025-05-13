@@ -11,7 +11,7 @@ function User () {
     /* Manages the appearance of the username modification form */
     const [display, setDisplay] = useState(true);
     /* Get username */
-    const [userName, setUserName] = useState('');
+    const [userName, setUserName] = useState("tony");
     /* Handle error message */
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -76,7 +76,8 @@ function User () {
                                 id="username"
                                 defaultValue={userData.username}
                                 onChange={(event) => setUserName(event.target.value)}
-                                placeholder="Enter user name"
+                                placeholder="User name"
+                                value={userName}
                             />
                         </div>
                         <div className="edit-input">
@@ -86,7 +87,7 @@ function User () {
                                 id="firstname" 
                                 defaultValue={userData.firstname}
                                 disabled={true}
-                                placeholder="First name"
+                                placeholder="Stark"
                             />
                         </div>
                         <div className="edit-input">
@@ -96,7 +97,7 @@ function User () {
                                 id="lastname" 
                                 defaultValue={userData.lastname}
                                 disabled={true}
-                                placeholder="Last name"
+                                placeholder="Stark"
                             />
                         </div>
                         <div className="button-container">
