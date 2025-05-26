@@ -1,9 +1,9 @@
 {
-  "name": "argent-bank",
+  "name": "argentbank",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://berekoutou.github.io/ArgentBank/",
+  "homepage": "https://github.com/BEREKOUTOU/ArgentBank.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
