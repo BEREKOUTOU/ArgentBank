@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Router>
+      <Router basename="/ArgentBank">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
