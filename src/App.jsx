@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Home from './pages/Home'
@@ -8,8 +8,7 @@ import Login from './pages/Login'
 import Profile from './pages/profile'
 import { loginSuccess } from './redux/actions/auth.actions.jsx';
 import './App.css'
-
-
+import ErrorBoundary from './components/ErrorBoundary';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -24,15 +23,17 @@ export default function App() {
 
   return (
     <div className="App">
-      <Router basename="/ArgentBank">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={isConnected ? <Profile /> : <Navigate to="/login" />} />  
-        </Routes>
-        <Footer />
-      </Router>
+      <ErrorBoundary>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={isConnected ? <Profile /> : <Navigate to="/login" />} />  
+          </Routes>
+          <Footer />
+        </Router>
+      </ErrorBoundary>
     </div>
   )
 }
